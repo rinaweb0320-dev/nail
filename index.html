@@ -31,7 +31,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -69,7 +69,6 @@ summary {
   justify-content: space-between;
   padding: 18px clamp(18px, 4vw, 56px);
   color: var(--color-white);
-  transition: background-color 0.5s var(--ease), box-shadow 0.5s var(--ease), color 0.5s var(--ease);
 }
 
 .site-header.is-scrolled {
@@ -125,13 +124,10 @@ summary {
   object-fit: cover;
   object-position: center;
   opacity: 0;
-  transform: scale(1.04);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 
 .hero-slide.is-active {
   opacity: 1;
-  transform: scale(1);
 }
 
 .hero-overlay {
@@ -208,26 +204,12 @@ h3 {
   padding: 14px 22px;
   border: 1px solid transparent;
   border-radius: var(--radius-small);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), background-color 0.5s var(--ease), color 0.5s var(--ease), border-color 0.5s var(--ease);
 }
 
 .button span,
 .text-link span,
 .fixed-cta span {
   display: inline-block;
-  transition: transform 0.5s var(--ease);
-}
-
-.button:hover,
-.hover-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-}
-
-.button:hover span,
-.text-link:hover span,
-.fixed-cta a:hover span {
-  transform: translateX(4px);
 }
 
 .button-primary {
@@ -235,19 +217,10 @@ h3 {
   background: var(--color-pink-deep);
 }
 
-.button-primary:hover {
-  background: var(--color-ink);
-}
-
 .button-secondary {
   color: var(--color-pink-deep);
   background: rgba(255, 255, 255, 0.86);
   border-color: rgba(143, 117, 184, 0.28);
-}
-
-.button-secondary:hover {
-  color: var(--color-white);
-  background: var(--color-pink);
 }
 
 .scroll-cue {
@@ -319,7 +292,6 @@ h3 {
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--color-white);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
 }
 
 .concept-card img {
@@ -353,13 +325,6 @@ h3 {
   height: 360px;
   object-fit: cover;
   object-position: center 38%;
-  transition: transform 0.5s var(--ease);
-}
-
-.gallery-card:hover img,
-.concept-card:hover img,
-.staff-card:hover img {
-  transform: scale(1.035);
 }
 
 .card-body,
@@ -438,7 +403,6 @@ h3 {
   height: 360px;
   object-fit: cover;
   object-position: center 38%;
-  transition: transform 0.5s var(--ease);
 }
 
 .staff-card div,
@@ -461,12 +425,6 @@ h3 {
   border: 1px solid rgba(143, 117, 184, 0.22);
   border-radius: var(--radius-small);
   background: var(--color-white);
-  transition: box-shadow 0.5s var(--ease), transform 0.5s var(--ease);
-}
-
-.faq-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
 }
 
 .faq-item summary {
@@ -487,11 +445,10 @@ h3 {
   right: 20px;
   color: var(--color-gold);
   transform: translateY(-50%);
-  transition: transform 0.5s var(--ease);
 }
 
 .faq-item[open] summary::after {
-  transform: translateY(-50%) rotate(45deg);
+  content: "-";
 }
 
 .faq-item p {
@@ -615,29 +572,11 @@ h3 {
   color: var(--color-white);
   background: var(--color-pink-deep);
   font-size: 0.9rem;
-  transition: transform 0.5s var(--ease), background-color 0.5s var(--ease), color 0.5s var(--ease);
 }
 
 .fixed-cta a:nth-child(2) {
   color: var(--color-pink-deep);
   background: var(--color-white);
-}
-
-.fixed-cta a:hover {
-  transform: translateY(-3px);
-  background: var(--color-ink);
-  color: var(--color-white);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 @media (min-width: 640px) {
@@ -705,16 +644,6 @@ h3 {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-}
-
   </style>
 </head>
 <body>
@@ -736,7 +665,7 @@ h3 {
         <img class="hero-slide" src="assets/nail-gallery-04.png" alt="">
       </div>
       <div class="hero-overlay"></div>
-      <div class="hero-content reveal">
+      <div class="hero-content">
         <p class="eyebrow">Korean Minimal Luxury</p>
         <h1>Soft Luxury<br>Nails</h1>
         <p class="hero-text">自然光のようにやわらかく、ジュエリーのように繊細な大人のネイルサロン。</p>
@@ -748,7 +677,7 @@ h3 {
       <a class="scroll-cue" href="#concept" aria-label="コンセプトへ移動">Scroll</a>
     </section>
 
-    <section id="concept" class="section concept-section reveal">
+    <section id="concept" class="section concept-section">
       <div class="section-heading">
         <p class="eyebrow">Concept</p>
         <h2>Quiet Korean Mood</h2>
@@ -758,7 +687,7 @@ h3 {
           <p>nail は、肌になじむニュアンスカラーと繊細なパーツ使いを得意とするプライベートサロンです。爪の形、肌色、ライフスタイルに合わせて、上品で長く眺めたくなるデザインをご提案します。</p>
           <p>トレンドをそのまま乗せるのではなく、あなたらしい抜け感へ。清潔感のある空間で、ゆっくりと気持ちまで整う時間をお過ごしください。</p>
         </div>
-        <div class="concept-card hover-card">
+        <div class="concept-card">
           <img src="assets/nail-gallery-04.png" alt="薄いパープルの上品な韓国風ネイルデザイン">
           <div>
             <span>private atelier</span>
@@ -768,35 +697,35 @@ h3 {
       </div>
     </section>
 
-    <section id="design" class="section reveal">
+    <section id="design" class="section">
       <div class="section-heading center">
         <p class="eyebrow">Nail Design</p>
         <h2>Design Gallery</h2>
         <p>韓国風ニュアンス、ワンホン、淡色フレンチ、季節のアートまで。</p>
       </div>
       <div class="gallery-grid">
-        <article class="gallery-card hover-card large">
+        <article class="gallery-card large">
           <img src="assets/nail-hero.png" alt="薄いパープルとパールのネイルギャラリー">
           <div class="card-body">
             <p class="eyebrow">Trend</p>
             <h3>mood ribbon</h3>
           </div>
         </article>
-        <article class="gallery-card hover-card">
+        <article class="gallery-card">
           <img src="assets/nail-gallery-01.png" alt="施術中のパープルネイルギャラリー">
           <div class="card-body">
             <p class="eyebrow">Pearl</p>
             <h3>milky nuance</h3>
           </div>
         </article>
-        <article class="gallery-card hover-card">
+        <article class="gallery-card">
           <img src="assets/nail-gallery-02.png" alt="パールとクロームラインのネイルギャラリー">
           <div class="card-body">
             <p class="eyebrow">Gold</p>
             <h3>soft edge</h3>
           </div>
         </article>
-        <article class="gallery-card hover-card wide">
+        <article class="gallery-card wide">
           <img src="assets/nail-gallery-03.png" alt="薄いパープルとゴールドのサンプルチップ">
           <div class="card-body">
             <p class="eyebrow">Collection</p>
@@ -806,23 +735,23 @@ h3 {
       </div>
     </section>
 
-    <section id="menu" class="section soft-section reveal">
+    <section id="menu" class="section soft-section">
       <div class="section-heading center">
         <p class="eyebrow">Menu</p>
         <h2>Premium Menu</h2>
       </div>
       <div class="card-grid three">
-        <article class="info-card hover-card">
+        <article class="info-card">
           <span class="card-number">01</span>
           <h3>韓国ニュアンス</h3>
           <p>透け感、マグネット、ミラーを重ねた奥行きのある人気デザイン。</p>
         </article>
-        <article class="info-card hover-card">
+        <article class="info-card">
           <span class="card-number">02</span>
           <h3>ワンホン・パーツ</h3>
           <p>リボン、パール、ストーンを上品に。特別な日にも映える仕上がり。</p>
         </article>
-        <article class="info-card hover-card">
+        <article class="info-card">
           <span class="card-number">03</span>
           <h3>ケア重視コース</h3>
           <p>甘皮ケアとフォルム形成を丁寧に行い、持ちの良さまで美しく。</p>
@@ -830,7 +759,7 @@ h3 {
       </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section">
       <div class="section-heading">
         <p class="eyebrow">Price</p>
         <h2>Price List</h2>
@@ -845,12 +774,12 @@ h3 {
       <p class="note">初回オフ無料。パーツ追加や長さ出しは当日ご相談ください。</p>
     </section>
 
-    <section class="section staff-section reveal">
+    <section class="section staff-section">
       <div class="section-heading center">
         <p class="eyebrow">Staff</p>
         <h2>Our Nailist</h2>
       </div>
-      <div class="staff-card hover-card">
+      <div class="staff-card">
         <img src="assets/nail-gallery-01.png" alt="ネイルデザインを施すスタッフのイメージ">
         <div>
           <p class="eyebrow">Owner Nailist</p>
@@ -860,28 +789,28 @@ h3 {
       </div>
     </section>
 
-    <section class="section soft-section reveal">
+    <section class="section soft-section">
       <div class="section-heading center">
         <p class="eyebrow">Voice</p>
         <h2>Reviews</h2>
       </div>
       <div class="card-grid three">
-        <article class="review-card hover-card">
+        <article class="review-card">
           <p>「写真以上に可愛く、手元を見るたび気分が上がります。色の提案も丁寧でした。」</p>
           <span>28歳 / 会社員</span>
         </article>
-        <article class="review-card hover-card">
+        <article class="review-card">
           <p>「空間が落ち着いていて、仕上がりも上品。仕事でも浮かないデザインが嬉しいです。」</p>
           <span>32歳 / 美容関係</span>
         </article>
-        <article class="review-card hover-card">
+        <article class="review-card">
           <p>「パーツの置き方が繊細で、友人にも褒められました。次回予約もしました。」</p>
           <span>25歳 / 販売職</span>
         </article>
       </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section">
       <div class="section-heading">
         <p class="eyebrow">FAQ</p>
         <h2>Questions</h2>
@@ -902,12 +831,12 @@ h3 {
       </div>
     </section>
 
-    <section id="access" class="section access-section reveal">
+    <section id="access" class="section access-section">
       <div class="section-heading center">
         <p class="eyebrow">Access</p>
         <h2>Access</h2>
       </div>
-      <div class="access-card hover-card">
+      <div class="access-card">
         <div class="map-placeholder">
           <span>nail salon</span>
         </div>
@@ -919,7 +848,7 @@ h3 {
       </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section">
       <div class="section-heading">
         <p class="eyebrow">Shop Info</p>
         <h2>Shop Information</h2>
@@ -933,8 +862,8 @@ h3 {
       </dl>
     </section>
 
-    <section class="section campaign-section reveal">
-      <div class="campaign-card hover-card">
+    <section class="section campaign-section">
+      <div class="campaign-card">
         <p class="eyebrow">Campaign</p>
         <h2>First Visit<br>20% Off</h2>
         <p>LINE予約で、人気の定額デザインを特別価格でご案内。上品なパーツ追加もご相談ください。</p>
@@ -942,12 +871,12 @@ h3 {
       </div>
     </section>
 
-    <section class="section recruit-section reveal">
+    <section class="section recruit-section">
       <div class="section-heading">
         <p class="eyebrow">Recruit</p>
         <h2>Recruit</h2>
       </div>
-      <div class="recruit-card hover-card">
+      <div class="recruit-card">
         <div>
           <h3>美しい手元を、丁寧につくる仲間を募集しています。</h3>
           <p>韓国トレンド、ニュアンスアート、接客が好きなネイリストを歓迎します。技術だけでなく、世界観づくりも一緒に楽しめるサロンです。</p>
@@ -956,7 +885,7 @@ h3 {
       </div>
     </section>
 
-    <section id="reserve" class="section reserve-section reveal">
+    <section id="reserve" class="section reserve-section">
       <p class="eyebrow">Reserve</p>
       <h2>Book Your<br>Next Mood</h2>
       <p>ご希望日時、デザイン画像、ご予算をLINEでお送りください。空き状況をご案内します。</p>
@@ -978,22 +907,8 @@ h3 {
   </div>
 
   <script>
-const slides = document.querySelectorAll(".hero-slide");
 const header = document.querySelector(".site-header");
-const revealTargets = document.querySelectorAll(".reveal");
 const faqItems = document.querySelectorAll(".faq-item");
-
-let currentSlide = 0;
-
-function showNextSlide() {
-  slides[currentSlide].classList.remove("is-active");
-  currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].classList.add("is-active");
-}
-
-if (slides.length > 1) {
-  setInterval(showNextSlide, 3600);
-}
 
 function updateHeader() {
   header.classList.toggle("is-scrolled", window.scrollY > 40);
@@ -1001,20 +916,6 @@ function updateHeader() {
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.16,
-  rootMargin: "0px 0px -40px 0px"
-});
-
-revealTargets.forEach((target) => revealObserver.observe(target));
 
 faqItems.forEach((item) => {
   item.addEventListener("toggle", () => {
