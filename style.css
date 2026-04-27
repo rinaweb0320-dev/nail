@@ -64,7 +64,7 @@ button {
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 16px var(--space-page);
   transition: background var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
 }
@@ -73,36 +73,6 @@ button {
   background: rgba(255, 253, 248, 0.86);
   box-shadow: 0 8px 28px rgba(31, 28, 24, 0.08);
   backdrop-filter: blur(18px);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-}
-
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: var(--color-white);
-  background: var(--color-red);
-  font-family: Arial, "Hiragino Sans", sans-serif;
-  font-size: 17px;
-  font-weight: 800;
-}
-
-.brand-text {
-  overflow: hidden;
-  max-width: 42vw;
-  color: var(--color-ink);
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 
 .desktop-nav {
